@@ -1,40 +1,65 @@
-<HTML>
+<HTML lang="en">
   <header>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="order-form.css">
-      <h1>Order Form</h1>
+      <h1 id="headline">Order Form</h1>
   </header>
   <body>
-    <div>
-       
-            <label for="orderDate" class="order-date">Order Date</label>
-            <input id="orderDate" type="text">
-            <span id='invalidOrderDate'>Invalid Date</span>
-         
-            <label for="itemName" class="item-name">Item Name</label>
-            <select id="itemN" type="text">
-              <option>Shoes</option>
-              <option>Pen</option>
-              <option>Ruler</option>
-            </select>
+    <div class="wrapper"> 
+      <div id="formOf">
 
-            <label for="amount" class="amount">Order Amount</label>
-            <input id="amount" type="number">
+        <label for="orderDate" class="order-date">Order Date</label>
+        <input id="orderDate" class="boxes" type="text" min="">
+        <span id='invalidOrderDate'>Invalid Date</span>
+      
+        <label for="itemName" class="item-name">Item Name</label>
+        <select id="itemN" class="boxes" type="text" required>
+          <option value="">-Select Item-</option>
+          <option value="70">Shoes</option>
+          <option value="5">Pen</option>
+          <option value="2">Ruler</option>
+        </select>
 
-            <label for="unitPrice" class="unit-price">Unit Price</label>
-            <input id="unitPrice" type="number">
+        <label for="amount" class="amount">Order Amount</label>
+        <input id="amount" class="boxes" type="number" min="1">
 
-            <label for="totalPrice" class="total-price">Total</label>
-            <input id="totalPrice" readonly=true class="total-price"></label>
+        <label for="unitPrice" class="unit-price">Unit Price</label>
+        <input id="unitPrice" class="boxes" readonly=true>
 
-            <input type="radio" name="delivery" value="standard">Standard(Free)<br/>
-            <input type="radio" name="delivery" value="fast">Fast(£2.99)<br/>
-            <input type="radio" name="delivery" value="express">Express(£4.99)<br/>
-            
-            <label for="totalAll" class="total-price-all">Total Include Delivery</label>
-            <input id="totalAll" readonly=true class="total-price-all"></label>
-            
-            <button id='submitOrder'>Submit</button>
+        <label for="totalPrice" class="total-price">Total</label>
+        <input id="totalPrice" class="boxes" readonly=true class="total-price"></label>
         
+        <div class="container">
+          <h3>Delivery Options</h2>
+          <ul>
+            <li>
+              <input type="radio" name="delivery" value="standard" id="standart">
+              <label for="standart">Standart(Free)</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li>
+              <input type="radio" name="delivery" value="fast" id="fast">
+              <label for="fast">Fast(£2.99)</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li>
+              <input type="radio" name="delivery" value="express" id="express">
+              <label for="express">Express(£4.99)</label>
+
+              <div class="check"></div>
+            </li>
+          </ul>
+        </div>
+        <label for="totalAll" class="total-price-all">Total Include Delivery</label>
+        <input id="totalAll" readonly=true>
+        
+        <button id='submitOrder'>Submit</button>
+      </div>
     </div>
   </body>
   <script src="order-date.js"></script>
