@@ -20,9 +20,7 @@ function init(){
   
   amountBox.addEventListener('change', (event)=> calculateTotalAmount(amountBox, unitPriceBox, totalPriceBox, totalAllBox, deliveryOptions));
 
-  deliveryOptions[0].addEventListener('click', (event) => addDeliveryFeeToTotal(totalAllBox, totalPriceBox, deliveryOptions));
-  deliveryOptions[1].addEventListener('click', (event) => addDeliveryFeeToTotal(totalAllBox, totalPriceBox , deliveryOptions));
-  deliveryOptions[2].addEventListener('click', (event) => addDeliveryFeeToTotal(totalAllBox, totalPriceBox, deliveryOptions));
+  deliveryOptions.forEach(item=>item.addEventListener('click', (event) => addDeliveryFeeToTotal(totalAllBox, totalPriceBox, deliveryOptions)));
 }
 
 function orderSubmit(event){
